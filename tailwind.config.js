@@ -9,6 +9,12 @@ export default {
         tertiary: "rgba(243, 244, 248, 1)",
         background: "rgba(245, 245, 245, 1)",
         white: "rgba(255, 255, 255, 1)",
+        blue: {
+          primary: "rgba(115, 103, 240, 1)",
+        },
+        green: {
+          primary: "rgba(40, 199, 111, 1)",
+        },
       },
       borderRadius: {
         sm: "6px",

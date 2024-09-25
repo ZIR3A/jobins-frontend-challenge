@@ -6,4 +6,5 @@ import ChevRight from "../assets/png/chev-right.png";
 import BoxIcon from "../assets/png/box.png";
 import CirclePlusIcon from "../assets/png/circle-plus.png";
 import StarIcon from "../assets/png/star.png";
-export { Logo, SmartHomeIcon, ShoppingCartIcon, ChevLeft, ChevRight, BoxIcon, CirclePlusIcon, StarIcon };
+import BellIcon from "../assets/png/bell.png";
+export { Logo, SmartHomeIcon, ShoppingCartIcon, BellIcon, ChevLeft, ChevRight, BoxIcon, CirclePlusIcon, StarIcon };

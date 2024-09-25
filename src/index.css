@@ -3,13 +3,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 html {
   font-family: "Public Sans", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
 
+@layer components {
+  .card {
+    @apply rounded-xl bg-white
+  }
+}
+
+/* sidebar customization start */
 .sidebar-component {
   @apply max-w-[260px] h-screen min-w-[52px]
 }
@@ -26,17 +32,34 @@ html {
 
 .sidebar-menu-list-collapse {
   margin: auto 8px;
-  gap: 0;
   padding: 6px 8px 6px 8px;
+  @apply gap-0
 }
 
 .sidebar-header-wrapper-expand {
   padding: 20px 14px 20px 18px;
 }
+
 .sidebar-header-wrapper-collapse {
   padding: 20px 14px 20px 18px;
 }
 
+/* sidebar customization ends */
+
+/* Header customization starts */
+.header-wrapper {
+  height: 62px;
+  padding: 12px 0px 12px 0px;
+  @apply border border-red-500 flex justify-between items-center
+}
+
+.header-title {
+  @apply font-bold text-md sm:text-xl transition-all
+}
+
+/* Header customization ends */
+
+/* Main content customization ends */
 .main-section-wrapper {
   @apply bg-background w-full px-[26px] py-[8px]
 }

@@ -44,11 +44,7 @@ const Layout = memo(function Layout({ children }) {
           <SidebarItem icon={icon} text={name} active={active} isTitle={isTitle} key={_index} />
         ))}
       </Sidebar>
-      <section className="main-section-wrapper">
-        {/* DIfferent routes can be defined here */}
-        {/* For now its only dashboard */}
-        {children}
-      </section>
+      {children}
     </div>
   );
 });
