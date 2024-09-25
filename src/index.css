@@ -18,13 +18,16 @@ html {
   padding: 15px 30px 15px 30px;
 }
 
-.sidebar-menu-list.expand {
+.sidebar-menu-list-expand {
   margin: auto 14px;
+  gap: 8px;
   padding: 9px 16px 9px 16px;
 }
 
-.sidebar-menu-list.collapse {
+.sidebar-menu-list-collapse {
   margin: auto 8px;
+  gap: 0;
+  padding: 6px 8px 6px 8px;
 }
 
 .sidebar-header-wrapper-expand {
