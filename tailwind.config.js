@@ -15,6 +15,7 @@ export default {
         green: {
           primary: "rgba(40, 199, 111, 1)",
         },
+        borderColor: "rgba(219, 218, 222, 1)"
       },
       borderRadius: {
         sm: "6px",
