@@ -50,11 +50,15 @@ html {
 .header-wrapper {
   height: 62px;
   padding: 12px 0px 12px 0px;
-  @apply border border-red-500 flex justify-between items-center
+  @apply flex justify-between items-center
 }
 
 .header-title {
   @apply font-bold text-md sm:text-xl transition-all
+}
+
+.notification-icon {
+  @apply hidden md:inline-block
 }
 
 /* Header customization ends */
