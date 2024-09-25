@@ -1,4 +1,3 @@
-import { ChevronLast, ChevronFirst } from "lucide-react";
 import { useContext, createContext, useState } from "react";
 import { ChevLeft, ChevRight, company_name, Logo } from "../utils";
 import PropTypes from "prop-types";
@@ -21,7 +20,7 @@ export default function Sidebar({ children }) {
                     </button>
                 </div>
                 <SidebarContext.Provider value={{ expanded }}>
-                    <ul className="flex-1">{children}</ul>
+                    <ul className="flex-1 space-y-[8px]">{children}</ul>
                 </SidebarContext.Provider>
             </nav>
         </aside>
@@ -46,16 +45,16 @@ export function SidebarItem({ icon, text, active, alert, isTitle }) {
     `}
         >
             <img src={icon} alt="icon-sidebar-jobins" />
-            <span className={`overflow-hidden transition-all font-semibold text-[15px] ${expanded ? "w-52" : "w-0"}`}>{text}</span>
-            {/* {expanded && <span className={`overflow-hidden transition-all text-[15px] font-semibold ${expanded ? "w-52" : "w-0"}`}>{text}</span>} */}
+            <span className={`overflow-hidden transition-all font-semibold text-[15px] ${expanded ? "w-52" : "w-0 text-nowrap"}`}>{text}</span>
             {alert && <div className={`absolute right-2 w-2 h-2 rounded bg-tertiary ${expanded ? "" : "top-2"}`} />}
             {!expanded && (
                 <div
                     className={`
-          absolute left-full rounded-md px-2 py-1 ml-6
+          absolute left-full rounded-md px-2 py-1 ml-5
           bg-tertiary text-primary text-sm
           invisible opacity-20 -translate-x-3 transition-all
           group-hover:visible group-hover:opacity-100 group-hover:translate-x-0
+          max-w-[200px]
       `}
                 >
                     {text}
