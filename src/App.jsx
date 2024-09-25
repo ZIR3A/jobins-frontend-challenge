@@ -1,19 +1,11 @@
-import Sidebar, { SidebarItem } from './shared/Sidebar'
-import { SmartHomeIcon } from './utils'
+import Dashboard from "./pages/dashboardModule/modules/Dashboard";
+import Layout from "./shared/Layout";
 function App() {
-
   return (
-    <>
-      <div className="flex">
-        <Sidebar>
-          <SidebarItem icon={""} text="Main Menu" active={true} isTitle={true} />
-          <SidebarItem icon={SmartHomeIcon} text="Dashboard" active={true} />
-          <SidebarItem icon={""} text="hhh" active={true} isTitle={true} />
-        </Sidebar>
-        <div>asdasdasd</div>
-      </div>
-    </>
-  )
+    <Layout>
+      <Dashboard />
+    </Layout>
+  );
 }
 
-export default App
+export default App;
