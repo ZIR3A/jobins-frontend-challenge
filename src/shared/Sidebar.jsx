@@ -34,18 +34,18 @@ Sidebar.propTypes = {
 export function SidebarItem({ icon, text, active, alert, isTitle }) {
     const { expanded } = useContext(SidebarContext);
     if (isTitle) {
-        return <li className={`sidebar-menu-title uppercase text-[11px] transition-all text-secondary ${expanded ? "visible" : "hidden"}`}>MAIN MENU</li>;
+        return <li className={`sidebar-menu-title uppercase text-[11px] transition-all text-secondary ${expanded ? "visible" : "hidden"}`}>{text}</li>;
     }
     return (
         <li
             className={`
      relative flex items-center my-1 font-medium cursor-pointer transition-colors group rounded-sm sidebar-menu-list
-        ${active ? "bg-tertiary text-primary expand" : "hover:bg-tertiary text-secondary collapse"}
-        ${expanded ? "gap-[8px]" : "gap-0 !p-2 !mx-2"}
+        ${active ? "bg-tertiary text-primary font-semibold" : "hover:bg-tertiary text-secondary font-normal"}
+        ${expanded ? "sidebar-menu-list-expand" : "sidebar-menu-list-collapse"}
     `}
         >
             <img src={icon} alt="icon-sidebar-jobins" />
-            <span className={`overflow-hidden transition-all font-semibold text-[15px] ${expanded ? "w-52" : "w-0 text-nowrap"}`}>{text}</span>
+            <span className={`overflow-hidden transition-all text-[15px] ${expanded ? "w-52" : "w-0 text-nowrap"}`}>{text}</span>
             {alert && <div className={`absolute right-2 w-2 h-2 rounded bg-tertiary ${expanded ? "" : "top-2"}`} />}
             {!expanded && (
                 <div
