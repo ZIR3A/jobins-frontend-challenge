@@ -51,7 +51,7 @@ export function SidebarItem({ icon, text, active, alert, isTitle }) {
                 <div
                     className={`
           absolute left-full rounded-md px-2 py-1 ml-5
-          bg-tertiary text-primary text-sm
+          bg-secondary text-white text-sm
           invisible opacity-20 -translate-x-3 transition-all
           group-hover:visible group-hover:opacity-100 group-hover:translate-x-0
           max-w-[200px]
