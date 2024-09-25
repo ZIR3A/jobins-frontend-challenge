@@ -5,7 +5,9 @@ function App() {
     <>
       <div className="flex">
         <Sidebar>
+          <SidebarItem icon={""} text="Main Menu" active={true} isTitle={true} />
           <SidebarItem icon={""} text="hhh" active={true} />
+          <SidebarItem icon={""} text="hhh" active={true} isTitle={true} />
         </Sidebar>
         <div>asdasdasd</div>
       </div>

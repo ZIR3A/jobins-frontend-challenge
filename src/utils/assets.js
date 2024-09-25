@@ -1,3 +1,3 @@
 import Logo from "../assets/png/logo.png";
-
-export { Logo };
+import SmartHome from "../assets/png/smart-home.png"
+export { Logo, SmartHome };
