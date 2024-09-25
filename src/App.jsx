@@ -1,4 +1,5 @@
 import Sidebar, { SidebarItem } from './shared/Sidebar'
+import { SmartHomeIcon } from './utils'
 function App() {
 
   return (
@@ -6,7 +7,7 @@ function App() {
       <div className="flex">
         <Sidebar>
           <SidebarItem icon={""} text="Main Menu" active={true} isTitle={true} />
-          <SidebarItem icon={""} text="Dashboard" active={true} />
+          <SidebarItem icon={SmartHomeIcon} text="Dashboard" active={true} />
           <SidebarItem icon={""} text="hhh" active={true} isTitle={true} />
         </Sidebar>
         <div>asdasdasd</div>

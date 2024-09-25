@@ -11,7 +11,7 @@ html {
 }
 
 .sidebar-component {
-  @apply max-w-[260px]
+  @apply max-w-[260px] h-screen
 }
 
 .sidebar-menu-title {
@@ -20,13 +20,11 @@ html {
 
 .sidebar-menu-list.expand {
   margin: auto 14px;
-  gap: 8px;
   padding: 9px 16px 9px 16px;
 }
 
 .sidebar-menu-list.collapse {
   margin: auto 8px;
-  gap: 0px !important;
 }
 
 .sidebar-header-wrapper-expand {
