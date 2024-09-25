@@ -7,7 +7,7 @@ export default function Sidebar({ children }) {
     const [expanded, setExpanded] = useState(true);
     return (
         <aside className="sidebar-component">
-            <nav className="h-full flex flex-col bg-white border-r shadow-sm">
+            <nav className="h-full flex flex-col bg-white shadow-sm">
                 <div className={`flex ${expanded ? "justify-between sidebar-header-wrapper-expand" : "justify-center sidebar-header-wrapper-collapse"} items-center`}>
                     {expanded && (
                         <div className={`flex gap-[10px] items-center`}>
