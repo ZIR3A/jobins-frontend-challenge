@@ -6,7 +6,11 @@ export default {
       colors: {
         primary: "rgba(35, 39, 46, 1)",
         secondary: "rgba(139, 144, 154, 1)",
+        tertiary: "rgba(243, 244, 248, 1)",
       },
+      borderRadius: {
+        sm: "6px"
+      }
     },
   },
   plugins: [],

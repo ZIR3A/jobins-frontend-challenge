@@ -1,17 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* * {
-  font-family: sans-serif;
-} */
-
-@layer base {
-  html {
-    font-family: "sans-serif"
-  }
+html {
+  font-family: "Public Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
-@layer utilities {
-
+.sidebar-component {
+  @apply max-w-[260px]
 }
+
+.sidebar-menu-title {
+  padding: 15px 30px 15px 30px;
+}
+
+.sidebar-menu-list.expand {
+  margin: auto 14px;
+  gap: 8px;
+  padding: 9px 16px 9px 16px;
+}
+
+.sidebar-menu-list.collapse {
+  margin: auto 8px;
+  gap: 0px !important;
+}
+
+.sidebar-header-wrapper-expand {
+  padding: 20px 14px 20px 18px;
+}
+.sidebar-header-wrapper-collapse {
+  padding: 20px 14px 20px 18px;
+}
+
