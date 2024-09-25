@@ -11,7 +11,7 @@ html {
 }
 
 .sidebar-component {
-  @apply max-w-[260px] h-screen
+  @apply max-w-[260px] h-screen min-w-[52px]
 }
 
 .sidebar-menu-title {
@@ -37,3 +37,6 @@ html {
   padding: 20px 14px 20px 18px;
 }
 
+.main-section-wrapper {
+  @apply bg-background w-full px-[26px] py-[8px]
+}
