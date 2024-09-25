@@ -26,8 +26,8 @@ html {
 
 .sidebar-menu-list-expand {
   margin: auto 14px;
-  gap: 8px;
   padding: 9px 16px 9px 16px;
+  @apply gap-2
 }
 
 .sidebar-menu-list-collapse {
@@ -65,5 +65,5 @@ html {
 
 /* Main content customization ends */
 .main-section-wrapper {
-  @apply bg-background w-full px-[26px] py-[8px]
+  @apply bg-background w-full px-6 py-2
 }
