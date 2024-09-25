@@ -1,7 +1,7 @@
 import { ChevronLast, ChevronFirst } from "lucide-react";
 import { useContext, createContext, useState } from "react";
 import { company_name, Logo, SmartHome } from "../utils";
-
+import PropTypes from "prop-types";
 const SidebarContext = createContext();
 
 export default function Sidebar({ children }) {
@@ -21,7 +21,6 @@ export default function Sidebar({ children }) {
                         {expanded ? <ChevronFirst /> : <ChevronLast />}
                     </button>
                 </div>
-
                 <SidebarContext.Provider value={{ expanded }}>
                     <ul className="flex-1">{children}</ul>
                 </SidebarContext.Provider>
@@ -29,6 +28,10 @@ export default function Sidebar({ children }) {
         </aside>
     );
 }
+
+Sidebar.propTypes = {
+    children: PropTypes.node,
+};
 
 export function SidebarItem({ icon, text, active, alert, isTitle }) {
     const { expanded } = useContext(SidebarContext);
@@ -61,3 +64,10 @@ export function SidebarItem({ icon, text, active, alert, isTitle }) {
         </li>
     );
 }
+SidebarItem.propTypes = {
+    icon: PropTypes.string,
+    text: PropTypes.string,
+    active: PropTypes.bool,
+    alert: PropTypes.bool,
+    isTitle: PropTypes.bool,
+};
