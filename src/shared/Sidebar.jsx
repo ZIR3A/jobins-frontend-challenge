@@ -58,7 +58,7 @@ export function SidebarItem({ icon, text, active, alert, isTitle }) {
     `}
         >
             <img src={icon} alt="icon-sidebar-jobins" />
-            <span className={`overflow-hidden transition-all text-[15px] ${expanded ? "w-52" : "w-0 text-nowrap"}`}>{text}</span>
+            <span className={`overflow-hidden transition-all text-[15px] text-nowrap ${expanded ? "w-52" : "w-0"}`}>{text}</span>
             {alert && <div className={`absolute right-2 w-2 h-2 rounded bg-tertiary ${expanded ? "" : "top-2"}`} />}
             {!expanded && (
                 <div
