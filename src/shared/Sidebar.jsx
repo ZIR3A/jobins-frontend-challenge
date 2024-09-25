@@ -1,10 +1,23 @@
-import { useContext, createContext, useState } from "react";
-import { ChevLeft, ChevRight, company_name, Logo } from "../utils";
+import { useContext, createContext, useState, useEffect } from "react";
+import { ChevLeft, ChevRight, company_name, Logo, sidebar_menu_responsive_width } from "../utils";
 import PropTypes from "prop-types";
 const SidebarContext = createContext();
 
 export default function Sidebar({ children }) {
-    const [expanded, setExpanded] = useState(true);
+    const [expanded, setExpanded] = useState(false);
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < sidebar_menu_responsive_width) {
+                setExpanded(false);
+            }
+            if (window.innerWidth > sidebar_menu_responsive_width) {
+                setExpanded(true);
+            }
+        };
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
     return (
         <aside className="sidebar-component">
             <nav className="h-full flex flex-col bg-white shadow-sm">
