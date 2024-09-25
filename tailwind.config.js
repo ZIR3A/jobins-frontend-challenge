@@ -8,6 +8,7 @@ export default {
         secondary: "rgba(139, 144, 154, 1)",
         tertiary: "rgba(243, 244, 248, 1)",
         background: "rgba(245, 245, 245, 1)",
+        white: "#fff"
       },
       borderRadius: {
         sm: "6px",
