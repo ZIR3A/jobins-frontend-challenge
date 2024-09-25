@@ -1,5 +1,5 @@
 import { useContext, createContext, useState, useEffect } from "react";
-import { ChevLeft, ChevRight, company_name, Logo, sidebar_menu_responsive_width } from "../utils";
+import { ChevLeft, ChevRight, COMPANY_NAME, Logo, SIDEBAR_MENU_RESPONSIVE_WIDTH } from "../utils";
 import PropTypes from "prop-types";
 const SidebarContext = createContext();
 
@@ -7,10 +7,10 @@ export default function Sidebar({ children }) {
     const [expanded, setExpanded] = useState(false);
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth < sidebar_menu_responsive_width) {
+            if (window.innerWidth < SIDEBAR_MENU_RESPONSIVE_WIDTH) {
                 setExpanded(false);
             }
-            if (window.innerWidth > sidebar_menu_responsive_width) {
+            if (window.innerWidth > SIDEBAR_MENU_RESPONSIVE_WIDTH) {
                 setExpanded(true);
             }
         };
@@ -25,7 +25,7 @@ export default function Sidebar({ children }) {
                     {expanded && (
                         <div className={`flex gap-[10px] items-center`}>
                             <img src={Logo} className={`overflow-hidden transition-all h-[24px] ${expanded ? "w-[28px]" : "w-0"}`} alt="" />
-                            <span className={`overflow-hidden text-[22px] font-bold ${expanded ? "visible" : "hidden"}`}>{company_name}</span>
+                            <span className={`overflow-hidden text-[22px] font-bold ${expanded ? "visible" : "hidden"}`}>{COMPANY_NAME}</span>
                         </div>
                     )}
                     <button onClick={() => setExpanded((curr) => !curr)} className="">

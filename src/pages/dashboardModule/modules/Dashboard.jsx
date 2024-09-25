@@ -1,6 +1,6 @@
 import { memo } from "react";
 import ContentWrapper from "../../../shared/ContentWrapper";
-import { ArrowUpIcon, SalesStatIcon, YenIcon } from "../../../utils";
+import { ArrowUpIcon, LAST_SEVEN_DAYS, SalesStatIcon, TOTAL_PROFIT_TITLE, TOTAL_SALES_TITLE, VS_LAST_SEVEN_DAYS, YenIcon } from "../../../utils";
 import PropTypes from "prop-types";
 
 const Dashboard = () => {
@@ -26,15 +26,15 @@ const SalesCard = memo(function TotalSalesCard() {
         <img src={SalesStatIcon} className="h-[73px] w-[73px]" />
         <div className="border-r border-borderColor h-[150px]" />
         <div>
-          <h4 className="font-semibold text-lg">Total Sales & Costs</h4>
-          <h4 className="text-secondary text-[14px] font-medium mt-1">Last 7 days</h4>
+          <h4 className="font-semibold text-lg">{TOTAL_SALES_TITLE}</h4>
+          <h4 className="text-secondary text-[14px] font-medium mt-1">{LAST_SEVEN_DAYS}</h4>
           <div className="mt-[30px] ">
             <h4 className="text-xxl font-bold">${_total_sales}</h4>
             <div className="mt-3 flex flex-wrap lg:flex-nowrap gap-2 items-center">
               <span className="text-green-primary inline-flex items-center justify-center gap-1 text-[14px] font-medium">
                 <img src={ArrowUpIcon} width={16} height={16} /> {_stats}
               </span>
-              <NormalLabel text="vs last 7 days" />
+              <NormalLabel text={VS_LAST_SEVEN_DAYS} />
             </div>
           </div>
         </div>
@@ -49,8 +49,8 @@ const ProfitCard = memo(function TotalSalesCard() {
     <div className="flex gap-[22px]">
       <img src={YenIcon} className="h-[43px] w-[43px]" />
       <div>
-        <h4 className="font-semibold text-lg">Total Profit</h4>
-        <h4 className="text-secondary text-[14px] font-medium mt-1">Last 7 days</h4>
+        <h4 className="font-semibold text-lg">{TOTAL_PROFIT_TITLE}</h4>
+        <h4 className="text-secondary text-[14px] font-medium mt-1">{LAST_SEVEN_DAYS}</h4>
       </div>
     </div>
     <div className="mt-[30px]">
@@ -59,7 +59,7 @@ const ProfitCard = memo(function TotalSalesCard() {
         <span className="text-green-primary inline-flex items-center justify-center gap-1 text-[14px] font-medium">
           <img src={ArrowUpIcon} width={16} height={16} /> {_stats}
         </span>
-        <NormalLabel text="vs last 7 days" />
+        <NormalLabel text={VS_LAST_SEVEN_DAYS} />
       </div>
     </div>
   </div>;
