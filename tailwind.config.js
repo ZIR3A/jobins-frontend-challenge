@@ -11,11 +11,15 @@ export default {
         white: "rgba(255, 255, 255, 1)",
         blue: {
           primary: "rgba(115, 103, 240, 1)",
+          dark: "rgba(15, 96, 255, 1)",
         },
         green: {
           primary: "rgba(40, 199, 111, 1)",
         },
-        borderColor: "rgba(219, 218, 222, 1)"
+        red: {
+          primary: "rgba(234, 84, 85, 1)"
+        },
+        borderColor: "rgba(219, 218, 222, 1)",
       },
       borderRadius: {
         sm: "6px",
