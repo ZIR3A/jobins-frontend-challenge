@@ -1,6 +1,7 @@
+import { content, plugin } from "flowbite-react/tailwind";
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}", content()],
   theme: {
     extend: {
       colors: {
@@ -17,7 +18,7 @@ export default {
           primary: "rgba(40, 199, 111, 1)",
         },
         red: {
-          primary: "rgba(234, 84, 85, 1)"
+          primary: "rgba(234, 84, 85, 1)",
         },
         borderColor: "rgba(219, 218, 222, 1)",
       },
@@ -36,5 +37,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [plugin()],
 };
