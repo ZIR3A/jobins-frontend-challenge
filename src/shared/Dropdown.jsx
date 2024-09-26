@@ -1,16 +1,17 @@
 import PropTypes from "prop-types";
-import { memo } from "react";
+import { memo, useId } from "react";
 
 const Dropdown = memo(function Dropdown({ className = "", label = "", options = [] }) {
+  const useID = useId();
   return (
     <>
-      <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" className={`${className} flex items-center border-0 focus:ring-blue-primary focus:border-blue-primary `} type="button">
+      <button id="dropdownDefaultButton" data-dropdown-toggle={useID} className={`${className} flex items-center border-0 focus:ring-blue-primary focus:border-blue-primary `} type="button">
         {label}
         <svg className="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
           <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
         </svg>
       </button>
-      <div id="dropdown" className="z-10 hidden bg-white divide-y divide-tertiary rounded-lg shadow w-44">
+      <div id={useID} className="z-10 hidden bg-white divide-y divide-tertiary rounded-lg shadow w-44">
         <ul className="py-2 text-sm text-primary" aria-labelledby="dropdownDefaultButton">
           {options?.map((_option, _i) => (
             <li key={_i}>
