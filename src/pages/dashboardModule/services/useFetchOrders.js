@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { _mockOrdersData } from "../constants";
 import { useEffectUpdate } from "../../../hooks";
 
@@ -26,11 +26,9 @@ const useFetchOrders = () => {
       })
       .finally(() => setProcessing(false));
   };
-  useEffectUpdate(
-    useCallback(() => {
-      fetchAllOrders();
-    }, [filters.limit, filters.page])
-  );
+  useEffect(() => {
+    fetchAllOrders();
+  }, [filters.limit, filters.page]);
   return { orders, processing, setFilters, filters };
 };
 
