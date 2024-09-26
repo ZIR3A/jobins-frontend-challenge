@@ -23,6 +23,9 @@ export default {
         red: {
           primary: "rgba(234, 84, 85, 1)",
         },
+        yellow:{
+          primary: "rgba(255, 198, 0, 1)"
+        },
         borderColor: "rgba(219, 218, 222, 1)",
       },
       borderRadius: {
