@@ -3,7 +3,7 @@ import { memo } from "react";
 import Dropdown from "./Dropdown";
 import { ChevronLeftIcon, ChevronRightIcon } from "../utils";
 
-const Table = memo(function Table({ headers = [], children, processing = false }) {
+const Table = memo(function Table({ headers = [], children, filters = {}, setFilters = () => null }) {
   return (
     <>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -19,7 +19,7 @@ const Table = memo(function Table({ headers = [], children, processing = false }
           </thead>
           <tbody>{children}</tbody>
         </table>
-        {!processing && <Pagination />}
+        <Pagination {...filters} setFilters={setFilters} />
       </div>
     </>
   );
@@ -29,11 +29,13 @@ Table.propTypes = {
   headers: PropTypes.arrayOf(PropTypes.shape({ label: PropTypes.string })),
   children: PropTypes.node,
   processing: PropTypes.bool,
+  filters: PropTypes.object,
+  setFilters: PropTypes.func,
 };
 
 export default Table;
 
-const Pagination = memo(function Pagination() {
+const Pagination = memo(function Pagination({ limit, page, total, setFilters }) {
   const _filterDateRangeOptions = [
     {
       label: "10",
@@ -48,45 +50,47 @@ const Pagination = memo(function Pagination() {
       slug: "50",
     },
   ];
+  const onPrevNextClick = (_i) => {
+    if (_i >= 1 && _i <= 3) {
+      setFilters((pre) => ({ ...pre, page: _i }));
+    }
+  };
   return (
-    <nav className="flex items-center flex-column flex-wrap md:flex-row justify-between px-5 py-4" aria-label="Table navigation">
+    <nav className={`${total > 0 ? "flex" : "hidden"} items-center flex-column flex-wrap md:flex-row justify-between px-5 py-4 `} aria-label="Table navigation">
       <span className="text-[15px] font-normal text-gray-light mb-4 md:mb-0 w-full md:w-auto flex items-center">
         Showing{" "}
         <span className="font-semibold text-primary mx-2 border rounded-sm">
-          <Dropdown className=" px-3 py-1 rounded-sm text-[15px] gap-[6px] bg-white" label={`10`} options={_filterDateRangeOptions} />
+          <Dropdown className=" px-3 py-1 rounded-sm text-[15px] gap-[6px] bg-white" label={limit} options={_filterDateRangeOptions} onClick={(e) => setFilters((pre) => ({ ...pre, limit: e }))} />
         </span>{" "}
         of 50
       </span>
       <ul className="inline-flex -space-x-px rtl:space-x-reverse text-[13px] h-9 gap-[2px]">
-        <li className="">
-          <a href="#" className="bg-tertiary rounded-[4px] flex items-center justify-center py-1 px-2 h-9 w-9 ms-0 leading-tight text-secondary rounded-s-sm  hover:text-blue-dark">
+        <li className="cursor-pointer" onClick={() => onPrevNextClick(page - 1)}>
+          <span className="bg-tertiary rounded-[4px] flex items-center justify-center py-1 px-2 h-9 w-9 ms-0 leading-tight text-secondary rounded-s-sm  hover:text-blue-dark">
             <img src={ChevronLeftIcon} />
-          </a>
+          </span>
         </li>
-        <li className="">
-          <a href="#" className="bg-blue-dark rounded-[4px] flex items-center justify-center py-1 px-2 h-9 w-9 leading-tight text-white">
-            1
-          </a>
-        </li>
-        <li className="">
-          <a href="#" className="bg-tertiary rounded-[4px] flex items-center justify-center py-1 px-2 h-9 w-9 leading-tight text-secondary  hover:bg-gray-100 hover:text-blue-dark">
-            2
-          </a>
-        </li>
-        <li className="">
-          <a href="#" className="bg-tertiary rounded-[4px] flex items-center justify-center py-1 px-2 h-9 w-9 leading-tight text-secondary  hover:bg-gray-100 hover:text-blue-dark">
-            3
-          </a>
-        </li>
-        <li className="">
-          <a href="#" className="bg-tertiary rounded-[4px] flex items-center justify-center py-1 px-2 h-9 w-9 leading-tight text-secondary  rounded-e-sm hover:bg-gray-100 hover:text-blue-dark">
+        {[...new Array(3)].map((_page, _i) => (
+          <li className="cursor-pointer" key={_i} onClick={() => setFilters((pre) => ({ ...pre, page: _i + 1 }))}>
+            <span className={`rounded-[4px] flex items-center justify-center py-1 px-2 h-9 w-9 leading-tight ${page === _i + 1 ? "bg-blue-dark  text-white" : "bg-tertiary text-secondary hover:text-blue-dark"}`}>{_i + 1}</span>
+          </li>
+        ))}
+
+        <li className="cursor-pointer" onClick={() => onPrevNextClick(page + 1)}>
+          <span className="bg-tertiary rounded-[4px] flex items-center justify-center py-1 px-2 h-9 w-9 leading-tight text-secondary  rounded-e-sm hover:bg-gray-100 hover:text-blue-dark">
             <img src={ChevronRightIcon} />
-          </a>
+          </span>
         </li>
       </ul>
     </nav>
   );
 });
+Pagination.propTypes = {
+  limit: PropTypes.number,
+  page: PropTypes.number,
+  total: PropTypes.number,
+  setFilters: PropTypes.func, // function to update the filters state
+};
 
 export const TableColumn = memo(function TableColumn({ value }) {
   return <td className="px-5 py-4">{value}</td>;
