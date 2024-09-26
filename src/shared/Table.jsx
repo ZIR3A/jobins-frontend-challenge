@@ -3,7 +3,7 @@ import { memo } from "react";
 import Dropdown from "./Dropdown";
 import { ChevronLeftIcon, ChevronRightIcon } from "../utils";
 
-const Table = memo(function Table({ headers = [], children }) {
+const Table = memo(function Table({ headers = [], children, processing = false }) {
   return (
     <>
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -19,7 +19,7 @@ const Table = memo(function Table({ headers = [], children }) {
           </thead>
           <tbody>{children}</tbody>
         </table>
-        <Pagination />
+        {!processing && <Pagination />}
       </div>
     </>
   );
@@ -28,6 +28,7 @@ const Table = memo(function Table({ headers = [], children }) {
 Table.propTypes = {
   headers: PropTypes.arrayOf(PropTypes.shape({ label: PropTypes.string })),
   children: PropTypes.node,
+  processing: PropTypes.bool,
 };
 
 export default Table;
