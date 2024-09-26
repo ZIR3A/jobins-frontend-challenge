@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { memo, useId } from "react";
 
-const Dropdown = memo(function Dropdown({ className = "", label = "", options = [] }) {
+const Dropdown = memo(function Dropdown({ className = "", label = "", options = [], onClick = () => null }) {
   const useID = useId();
   return (
     <>
@@ -14,10 +14,8 @@ const Dropdown = memo(function Dropdown({ className = "", label = "", options = 
       <div id={useID} className="z-10 hidden bg-white divide-y divide-tertiary rounded-lg shadow w-44">
         <ul className="py-2 text-sm text-primary" aria-labelledby="dropdownDefaultButton">
           {options?.map((_option, _i) => (
-            <li key={_i}>
-              <a href="#" className="block px-4 py-2 hover:bg-tertiary">
-                {_option?.label}
-              </a>
+            <li key={_i} onClick={() => onClick(_option?.slug)}>
+              <span className="block px-4 py-2 hover:bg-tertiary">{_option?.label}</span>
             </li>
           ))}
         </ul>
@@ -30,6 +28,7 @@ Dropdown.propTypes = {
   className: PropTypes.string,
   label: PropTypes.string.isRequired,
   options: PropTypes.arrayOf(PropTypes.shape({ label: PropTypes.string })).isRequired,
+  onClick: PropTypes.func,
 };
 
 export default Dropdown;
