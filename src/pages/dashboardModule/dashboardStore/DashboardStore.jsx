@@ -5,24 +5,34 @@ const initialState = {};
 export const ContextDashboard = React.createContext(initialState);
 export const ProviderDashboard = ({ children }) => {
   const [ordersActiveMenu, setOrdersActiveMenu] = useState("all");
+  const orderState = useFetchOrders();
   const _orderMenus = [
     {
       label: "All Orders",
       active: ordersActiveMenu === "all",
-      onClick: () => setOrdersActiveMenu("all"),
+      onClick: () => {
+        orderState.fetchAllOrders();
+        setOrdersActiveMenu("all");
+      },
     },
     {
       label: "Completed",
       active: ordersActiveMenu === "completed",
-      onClick: () => setOrdersActiveMenu("completed"),
+      onClick: () => {
+        orderState.fetchAllOrders();
+        setOrdersActiveMenu("completed");
+      },
     },
     {
       label: "Canceled",
       active: ordersActiveMenu === "canceled",
-      onClick: () => setOrdersActiveMenu("canceled"),
+      onClick: () => {
+        orderState.fetchAllOrders();
+        setOrdersActiveMenu("canceled");
+      },
     },
   ];
-  const orderState = useFetchOrders();
+
   return (
     <ContextDashboard.Provider
       value={{

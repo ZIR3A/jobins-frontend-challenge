@@ -28,7 +28,7 @@ const useFetchOrders = () => {
   useEffect(() => { 
     fetchAllOrders(); 
   }, [filters.limit, filters.page]); 
-  return { orders, processing, setFilters, filters };
+  return { orders, processing, setFilters, filters, fetchAllOrders };
 };
 
 export default useFetchOrders;
