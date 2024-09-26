@@ -1,4 +1,4 @@
-import Dashboard from "./pages/dashboardModule/modules/Dashboard";
+import Dashboard from "./pages";
 import Layout from "./shared/Layout";
 function App() {
   return (
