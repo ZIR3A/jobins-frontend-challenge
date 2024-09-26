@@ -43,6 +43,11 @@ const Dashboard = () => {
           </nav>
         </div>
       </div>
+      <div className="mt-4">
+        <div className="card">
+          asdasd
+        </div>
+      </div>
     </ContentWrapper>
   );
 };
