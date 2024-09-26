@@ -4,6 +4,7 @@ import ProfitCard from "../components/ProfitCard";
 import CountryStatCard from "../components/CountryStatCard";
 import PersonalSalesInfo from "../components/PersonalSalesInfo";
 import { useState } from "react";
+import Dropdown from "../../../shared/Dropdown";
 
 const Dashboard = () => {
   const [ordersActiveMenu, setOrdersActiveMenu] = useState("all");
@@ -22,6 +23,23 @@ const Dashboard = () => {
       label: "Canceled",
       active: ordersActiveMenu === "canceled",
       onClick: () => setOrdersActiveMenu("canceled"),
+    },
+  ];
+  const _filterStatusOptions = [
+    {
+      label: "All",
+      active: true,
+      slug: "all",
+    },
+    {
+      label: "Completed",
+      active: false,
+      slug: "completed",
+    },
+    {
+      label: "Canceled",
+      active: false,
+      slug: "canceled",
     },
   ];
   return (
@@ -44,9 +62,7 @@ const Dashboard = () => {
         </div>
       </div>
       <div className="mt-4">
-        <div className="card">
-          asdasd
-        </div>
+        <Dropdown className="border px-3 py-1 text-secondary rounded-sm text-[15px] gap-[6px] bg-white" label={`Status: All`} options={_filterStatusOptions} />
       </div>
     </ContentWrapper>
   );
