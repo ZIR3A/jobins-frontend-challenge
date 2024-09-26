@@ -3,7 +3,7 @@ import { _mockOrdersData } from "../constants";
 
 const useFetchOrders = () => {
   const [orders, setOrders] = useState([]);
-  const [processing, setProcessing] = useState(false);
+  const [processing, setProcessing] = useState(true);
   const fetchAllOrders = () => {
     setProcessing(true);
     fetch(`https://dummyjson.com/c/d7ba-8d7c-4bd7-9d6b?delay=1000`)
