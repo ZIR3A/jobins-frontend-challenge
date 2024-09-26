@@ -6,7 +6,7 @@ const ProfitCard = memo(function TotalSalesCard() {
   const _total_profit = "50K";
   const _stats = "12%";
   return (
-    <div className="card col-span-1 lg:col-span-2 p-[20px]">
+    <div className="card col-span-1 lg:col-span-2 dashboard-card-wrapper">
       <div className="flex gap-[22px]">
         <img src={YenIcon} className="h-[43px] w-[43px]" />
         <div>

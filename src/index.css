@@ -70,5 +70,7 @@ html {
 /* Main content customization ends */
 
 /* Dashboard customization start */
-
+  .dashboard-card-wrapper {
+    padding: 20px;
+  }
 /* Dashboard customization ends */

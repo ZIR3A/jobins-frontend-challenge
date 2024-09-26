@@ -6,7 +6,7 @@ const SalesCard = memo(function TotalSalesCard() {
   const _total_sales = "350K";
   const _stats = "8.56K";
   return (
-    <div className="card col-span-1 lg:col-span-3 p-[20px]">
+    <div className="card col-span-1 lg:col-span-3 dashboard-card-wrapper">
       <div className="flex items-center justify-center gap-10 ">
         <img src={SalesStatIcon} className="h-[73px] w-[73px]" />
         <div className="border-r border-borderColor h-[150px]" />
