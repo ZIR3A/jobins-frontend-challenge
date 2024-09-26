@@ -5,19 +5,19 @@ const SidebarContext = createContext();
 
 export default function Sidebar({ children }) {
     const [expanded, setExpanded] = useState(false);
-    useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth < SIDEBAR_MENU_RESPONSIVE_WIDTH) {
-                setExpanded(false);
-            }
-            if (window.innerWidth > SIDEBAR_MENU_RESPONSIVE_WIDTH) {
-                setExpanded(true);
-            }
-        };
-        handleResize();
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    // useEffect(() => {
+    //     const handleResize = () => {
+    //         if (window.innerWidth < SIDEBAR_MENU_RESPONSIVE_WIDTH) {
+    //             setExpanded(false);
+    //         }
+    //         if (window.innerWidth > SIDEBAR_MENU_RESPONSIVE_WIDTH) {
+    //             setExpanded(true);
+    //         }
+    //     };
+    //     handleResize();
+    //     window.addEventListener("resize", handleResize);
+    //     return () => window.removeEventListener("resize", handleResize);
+    // }, []);
     return (
         <aside className={`sidebar-component ${expanded ? 'expanded' : "collapsed"}`}>
             <nav className="h-full flex flex-col bg-white shadow-sm">
