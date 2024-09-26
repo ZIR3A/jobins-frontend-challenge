@@ -56,7 +56,7 @@ const Pagination = memo(function Pagination() {
         </span>{" "}
         of 50
       </span>
-      <ul className="inline-flex -space-x-px rtl:space-x-reverse text-sm h-9 gap-[2px]">
+      <ul className="inline-flex -space-x-px rtl:space-x-reverse text-[13px] h-9 gap-[2px]">
         <li className="">
           <a href="#" className="bg-tertiary rounded-[4px] flex items-center justify-center py-1 px-2 h-9 w-9 ms-0 leading-tight text-secondary rounded-s-sm  hover:text-blue-dark">
             <img src={ChevronLeftIcon} />
