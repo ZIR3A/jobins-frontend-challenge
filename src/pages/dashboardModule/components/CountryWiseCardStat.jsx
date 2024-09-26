@@ -7,7 +7,7 @@ const CountryWiseCardStat = memo(function CountryWiseCardStat({ icon, title, mar
       <div className="flex items-center gap-2 w-[225px]">
         <img src={icon} className="w-[34px] h-[34px]" />
         <div>
-          <p className="font-semibold text-[15px] text-primary">{marginAmount}</p>
+          <p className="font-semibold text-[15px] text-[rgba(75, 70, 92, 1)]">{marginAmount}</p>
           <p className="text-[13px] text-secondary">{title}</p>
         </div>
       </div>
