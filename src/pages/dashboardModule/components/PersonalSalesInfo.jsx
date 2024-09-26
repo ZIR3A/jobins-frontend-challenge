@@ -13,7 +13,7 @@ const PersonalSalesInfo = memo(function PersonalSalesInfo() {
   const _shipping_address = "Dhahara Margg, Fulbari 11, Pokhara, Nepal";
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 space-y-4">
-      <div className="flex items-center justify-start md:justify-center gap-4 border-r-0 md:border-r">
+      <div className="flex flex-wrap items-center gap-4 border-r-0 md:border-r">
         <img src={CircleBlueIcon} />
         <div>
           <p className="text-lg font-semibold">{_contact_name}</p>

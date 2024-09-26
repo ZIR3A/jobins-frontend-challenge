@@ -14,7 +14,7 @@ const Dashboard = () => {
         <CountryStatCard />
       </div>
       <div className="mt-4">
-        <div className="card dashboard-card-wrapper">
+        <div className="card px-10 py-5">
           <PersonalSalesInfo />
         </div>
       </div>
