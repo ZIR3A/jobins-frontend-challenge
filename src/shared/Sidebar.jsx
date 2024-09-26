@@ -19,7 +19,7 @@ export default function Sidebar({ children }) {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
     return (
-        <aside className="sidebar-component">
+        <aside className={`sidebar-component ${expanded ? 'expanded' : "collapsed"}`}>
             <nav className="h-full flex flex-col bg-white shadow-sm">
                 <div className={`flex ${expanded ? "justify-between sidebar-header-wrapper-expand" : "justify-center sidebar-header-wrapper-collapse"} items-center`}>
                     {expanded && (
