@@ -10,6 +10,14 @@ html {
   font-style: normal;
 }
 
+main {
+  animation: fadein 1s;
+}
+@keyframes fadein {
+  from { opacity: 0}
+  to   { opacity: 1}
+}
+
 @layer components {
   .card {
     @apply rounded-xl bg-white
