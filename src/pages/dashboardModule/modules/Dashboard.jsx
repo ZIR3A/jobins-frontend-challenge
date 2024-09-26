@@ -2,6 +2,8 @@ import ContentWrapper from "../../../shared/ContentWrapper";
 import SalesCard from "../components/SalesCard";
 import ProfitCard from "../components/ProfitCard";
 import CountryStatCard from "../components/CountryStatCard";
+import PersonalSalesInfo from "../components/PersonalSalesInfo";
+
 
 const Dashboard = () => {
   return (
@@ -11,8 +13,14 @@ const Dashboard = () => {
         <ProfitCard />
         <CountryStatCard />
       </div>
+      <div className="mt-4">
+        <div className="card dashboard-card-wrapper">
+          <PersonalSalesInfo />
+        </div>
+      </div>
     </ContentWrapper>
   );
 };
 
 export default Dashboard;
+

@@ -15,4 +15,6 @@ import BrazilIcon from "../assets/png/brazil.png";
 import AUSIcon from "../assets/png/australia.png";
 import ChevUpIcon from "../assets/png/chevron-up.png";
 import ChevDownIcon from "../assets/png/chevron-down.png";
-export { AUSIcon, BrazilIcon, ChevUpIcon, ChevDownIcon, Logo, SmartHomeIcon, ShoppingCartIcon, USAIcon, YenIcon, BellIcon, ArrowUpIcon, SalesStatIcon, ChevLeft, ChevRight, BoxIcon, CirclePlusIcon, StarIcon };
+import CircleBlueIcon from "../assets/png/circle-blue.png";
+
+export { CircleBlueIcon, AUSIcon, BrazilIcon, ChevUpIcon, ChevDownIcon, Logo, SmartHomeIcon, ShoppingCartIcon, USAIcon, YenIcon, BellIcon, ArrowUpIcon, SalesStatIcon, ChevLeft, ChevRight, BoxIcon, CirclePlusIcon, StarIcon };
