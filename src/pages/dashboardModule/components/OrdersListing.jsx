@@ -16,7 +16,7 @@ const OrdersListing = memo(function OrdersListing() {
             <TableLoader />
           ) : orders?.length > 0 ? (
             orders?.map(({ customer, date, id, method, status, total }, _i) => (
-              <tr key={_i} className="bg-white border-b hover:bg-tertiary text-primary text-[15px]">
+              <tr key={_i} className="bg-white border-b hover:bg-tertiary text-primary text-[15px] text-nowrap">
                 <TableColumn value={`#${id}`} />
                 <TableColumn value={customer} />
                 <TableColumn value={date} />

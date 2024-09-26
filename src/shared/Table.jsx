@@ -11,7 +11,7 @@ const Table = memo(function Table({ headers = [], children, filters = {}, setFil
           <thead className=" text-secondary uppercase border-b text-[13px]">
             <tr>
               {headers?.map((_header, _i) => (
-                <th key={_i} scope="col" className="px-5 py-4 font-normal">
+                <th key={_i} scope="col" className="px-5 py-4 font-normal text-nowrap">
                   {_header?.label}
                 </th>
               ))}
