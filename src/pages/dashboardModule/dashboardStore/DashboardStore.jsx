@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { useFetchOrders } from "../services";
 const initialState = {};
 export const ContextDashboard = React.createContext(initialState);
 export const ProviderDashboard = ({ children }) => {
@@ -21,11 +22,12 @@ export const ProviderDashboard = ({ children }) => {
       onClick: () => setOrdersActiveMenu("canceled"),
     },
   ];
-
+  const orderState = useFetchOrders();
   return (
     <ContextDashboard.Provider
       value={{
         _orderMenus,
+        orderState,
       }}
     >
       {children}

@@ -55,3 +55,55 @@ export const _tableHeaders = [
     label: "Actions",
   },
 ];
+export const _mockOrdersData = {
+  data: [
+    {
+      id: "5089",
+      customer: "Saran Baral",
+      date: "6 April, 2023",
+      total: "$2,564",
+      method: "CC",
+      status: "Pending",
+    },
+    {
+      id: "5089",
+      customer: "Saran Baral",
+      date: "6 April, 2023",
+      total: "$2,564",
+      method: "CC",
+      status: "Pending",
+    },
+    {
+      id: "5090",
+      customer: "Saran Baral",
+      date: "6 April, 2023",
+      total: "$2,564",
+      method: "CC",
+      status: "Pending",
+    },
+    {
+      id: "5091",
+      customer: "Saran Baral",
+      date: "6 April, 2023",
+      total: "$2,564",
+      method: "CC",
+      status: "Pending",
+    },
+    {
+      id: "5092",
+      customer: "Saran Baral",
+      date: "6 April, 2023",
+      total: "$2,544",
+      method: "CC",
+      status: "Pending",
+    },
+    {
+      id: "5093",
+      customer: "Saran Baral",
+      date: "6 April, 2023",
+      total: "$1,564",
+      method: "CC",
+      status: "Pending",
+    },
+  ],
+};
