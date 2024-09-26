@@ -14,6 +14,9 @@ export default {
           primary: "rgba(115, 103, 240, 1)",
           dark: "rgba(15, 96, 255, 1)",
         },
+        gray: {
+          light: "rgba(139, 144, 154, 1)",
+        },
         green: {
           primary: "rgba(40, 199, 111, 1)",
         },
