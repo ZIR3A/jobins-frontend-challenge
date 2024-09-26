@@ -5,6 +5,7 @@ import CountryStatCard from "../components/CountryStatCard";
 import PersonalSalesInfo from "../components/PersonalSalesInfo";
 import { useState } from "react";
 import Dropdown from "../../../shared/Dropdown";
+import BasicInput from "../../../shared/BasicInput";
 
 const Dashboard = () => {
   const [ordersActiveMenu, setOrdersActiveMenu] = useState("all");
@@ -42,6 +43,23 @@ const Dashboard = () => {
       slug: "canceled",
     },
   ];
+  const _filterDateRangeOptions = [
+    {
+      label: "Daily",
+      active: true,
+      slug: "days",
+    },
+    {
+      label: "Weekly",
+      active: false,
+      slug: "weeks",
+    },
+    {
+      label: "Monthly",
+      active: false,
+      slug: "months",
+    },
+  ];
   return (
     <ContentWrapper title="Dashboardd">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-9 gap-[18px]">
@@ -61,8 +79,14 @@ const Dashboard = () => {
           </nav>
         </div>
       </div>
-      <div className="mt-4">
-        <Dropdown className="border px-3 py-1 text-secondary rounded-sm text-[15px] gap-[6px] bg-white" label={`Status: All`} options={_filterStatusOptions} />
+      <div className="flex flex-wrap md:flex-no-wrap gap-4 md:gap-0 justify-between mt-4">
+        <div className="flex  gap-[14px]">
+          <Dropdown className="border px-3 py-1 text-secondary rounded-sm text-[15px] gap-[6px] bg-white" label={`Status: All`} options={_filterStatusOptions} />
+          <div>
+            <BasicInput inputClassName="border-none rounded-sm w-[200px] placeholder-secondary placeholder:font-normal placeholder:text-[14px] placeholder-opacity-0" placeHolder="Search..." />
+          </div>
+        </div>
+        <Dropdown className="border px-3 py-1 text-secondary rounded-sm text-[15px] gap-[6px] bg-white" label={`Filter by date range`} options={_filterDateRangeOptions} />
       </div>
     </ContentWrapper>
   );
