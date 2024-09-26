@@ -4,10 +4,10 @@ import Header from "./Header";
 
 const ContentWrapper = memo(function ContentWrapper({ children, title }) {
   return (
-    <section className="main-section-wrapper">
+    <main className="main-section-wrapper">
       <Header title={title} />
       {children}
-    </section>
+    </main>
   );
 });
 

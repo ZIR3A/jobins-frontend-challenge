@@ -63,7 +63,12 @@ html {
 
 /* Header customization ends */
 
-/* Main content customization ends */
+/* Main content customization starts */
 .main-section-wrapper {
   @apply bg-background w-full px-6 py-2
 }
+/* Main content customization ends */
+
+/* Dashboard customization start */
+
+/* Dashboard customization ends */
