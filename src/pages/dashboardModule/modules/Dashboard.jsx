@@ -6,6 +6,7 @@ import PersonalSalesInfo from "../components/PersonalSalesInfo";
 import { useState } from "react";
 import Dropdown from "../../../shared/Dropdown";
 import BasicInput from "../../../shared/BasicInput";
+import Table, { TableColumn } from "../../../shared/Table";
 
 const Dashboard = () => {
   const [ordersActiveMenu, setOrdersActiveMenu] = useState("all");
@@ -60,6 +61,29 @@ const Dashboard = () => {
       slug: "months",
     },
   ];
+  const _tableHeaders = [
+    {
+      label: "ID",
+    },
+    {
+      label: "Customer",
+    },
+    {
+      label: "Date",
+    },
+    {
+      label: "Total",
+    },
+    {
+      label: "Method",
+    },
+    {
+      label: "Status",
+    },
+    {
+      label: "Actions",
+    },
+  ];
   return (
     <ContentWrapper title="Dashboardd">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-9 gap-[18px]">
@@ -87,6 +111,72 @@ const Dashboard = () => {
           </div>
         </div>
         <Dropdown className="border px-3 py-1 text-secondary rounded-sm text-[15px] gap-[6px] bg-white" label={`Filter by date range`} options={_filterDateRangeOptions} />
+      </div>
+      <div className="mt-4">
+        <div className="card">
+          <Table headers={_tableHeaders}>
+            <tr className="bg-white border-b hover:bg-tertiary text-primary text-[15px]">
+              <TableColumn value="#5089" />
+              <TableColumn value="Joseph Wheeler" />
+              <TableColumn value="6 April, 2023" />
+              <TableColumn value="$2999" />
+              <TableColumn value="CC" />
+              <TableColumn value={<span>Pending</span>} />
+              <TableColumn
+                value={
+                  <a href="#" className="font-medium text-blue-primary hover:underline">
+                    View Details
+                  </a>
+                }
+              />
+            </tr>
+            <tr className="bg-white border-b hover:bg-tertiary text-primary text-[15px]">
+              <TableColumn value="#5089" />
+              <TableColumn value="Joseph Wheeler" />
+              <TableColumn value="6 April, 2023" />
+              <TableColumn value="$2999" />
+              <TableColumn value="CC" />
+              <TableColumn value={<span>Pending</span>} />
+              <TableColumn
+                value={
+                  <a href="#" className="font-medium text-blue-primary hover:underline">
+                    View Details
+                  </a>
+                }
+              />
+            </tr>
+            <tr className="bg-white border-b hover:bg-tertiary text-primary text-[15px]">
+              <TableColumn value="#5089" />
+              <TableColumn value="Joseph Wheeler" />
+              <TableColumn value="6 April, 2023" />
+              <TableColumn value="$2999" />
+              <TableColumn value="CC" />
+              <TableColumn value={<span>Pending</span>} />
+              <TableColumn
+                value={
+                  <a href="#" className="font-medium text-blue-primary hover:underline">
+                    View Details
+                  </a>
+                }
+              />
+            </tr>
+            <tr className="bg-white border-b hover:bg-tertiary text-primary text-[15px]">
+              <TableColumn value="#5089" />
+              <TableColumn value="Joseph Wheeler" />
+              <TableColumn value="6 April, 2023" />
+              <TableColumn value="$2999" />
+              <TableColumn value="CC" />
+              <TableColumn value={<span>Pending</span>} />
+              <TableColumn
+                value={
+                  <a href="#" className="font-medium text-blue-primary hover:underline">
+                    View Details
+                  </a>
+                }
+              />
+            </tr>
+          </Table>
+        </div>
       </div>
     </ContentWrapper>
   );
