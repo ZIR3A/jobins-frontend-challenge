@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
-import React, { memo } from "react";
+import { memo } from "react";
 import Dropdown from "./Dropdown";
-import { ChevLeft, ChevronLeftIcon, ChevronRightIcon } from "../utils";
+import { ChevronLeftIcon, ChevronRightIcon } from "../utils";
 
 const Table = memo(function Table({ headers = [], children }) {
   return (
@@ -25,7 +25,10 @@ const Table = memo(function Table({ headers = [], children }) {
   );
 });
 
-Table.propTypes = {};
+Table.propTypes = {
+  headers: PropTypes.arrayOf(PropTypes.shape({ label: PropTypes.string })),
+  children: PropTypes.node,
+};
 
 export default Table;
 
