@@ -48,7 +48,7 @@ main {
 
 /* sidebar customization start */
 .sidebar-component {
-  @apply h-screen transition-all
+  @apply max-w-[260px] h-screen min-w-[52px]
 }
 
 .sidebar-component.expanded {
