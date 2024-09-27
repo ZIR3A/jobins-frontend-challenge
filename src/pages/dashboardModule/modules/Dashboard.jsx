@@ -5,7 +5,7 @@ import { ProviderDashboard } from "../dashboardStore/DashboardStore";
 const Dashboard = () => {
   return (
     <ProviderDashboard>
-      <ContentWrapper title="Dashboardd">
+      <ContentWrapper title="Saran's Dashboard">
         <CardsWrapper />
         <SalesWrappers />
         <TableFilters />
