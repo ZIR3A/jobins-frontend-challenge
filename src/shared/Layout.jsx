@@ -1,42 +1,11 @@
 import PropTypes from "prop-types";
 import { memo } from "react";
 import Sidebar, { SidebarItem } from "./Sidebar";
-import { BoxIcon, CirclePlusIcon, ShoppingCartIcon, SmartHomeIcon, StarIcon } from "../utils";
+import { _sideNavMenuLists } from "../pages/dashboardModule/constants";
 
 const Layout = memo(function Layout({ children }) {
   // sidebar menus lists
-  const _sideNavMenuLists = [
-    {
-      name: "Main Menu",
-      isTitle: true,
-    },
-    {
-      name: "Dashboard",
-      active: true,
-      icon: SmartHomeIcon
-    },
-    {
-      name: "Order Management",
-      icon: ShoppingCartIcon
-    },
-    {
-      name: "Brand",
-      active: false,
-      icon: StarIcon
-    },
-    {
-      name: "Products",
-      isTitle: true,
-    },
-    {
-      name: "Add Products",
-      icon: CirclePlusIcon
-    },
-    {
-      name: "Product List",
-      icon: BoxIcon
-    },
-  ]
+
   return (
     <div className="flex">
       <Sidebar>

@@ -1,3 +1,5 @@
+import { BoxIcon, CirclePlusIcon, ShoppingCartIcon, SmartHomeIcon, StarIcon } from "../../../utils";
+
 export const _filterStatusOptions = [
   {
     label: "All",
@@ -107,3 +109,35 @@ export const _mockOrdersData = {
     },
   ],
 };
+export const _sideNavMenuLists = [
+  {
+    name: "Main Menu",
+    isTitle: true,
+  },
+  {
+    name: "Dashboard",
+    active: true,
+    icon: SmartHomeIcon,
+  },
+  {
+    name: "Order Management",
+    icon: ShoppingCartIcon,
+  },
+  {
+    name: "Brand",
+    active: false,
+    icon: StarIcon,
+  },
+  {
+    name: "Products",
+    isTitle: true,
+  },
+  {
+    name: "Add Products",
+    icon: CirclePlusIcon,
+  },
+  {
+    name: "Product List",
+    icon: BoxIcon,
+  },
+];
