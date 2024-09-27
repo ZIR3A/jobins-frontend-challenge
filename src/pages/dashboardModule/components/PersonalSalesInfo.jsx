@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const PersonalSalesInfo = memo(function PersonalSalesInfo() {
   const _contact_name = "Saran Baral";
   const _contact_email = "saranbrl35@gmail.com";
-  const _contact_number = "+9779817178937";
+  const _contact_number = "(+977) 9817178937";
   const _contact_dob = "23 Nov, 1998";
   const _contact_member_since = "26 September, 2024";
   const _total_order = "150";
