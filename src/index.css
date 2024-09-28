@@ -114,4 +114,17 @@ main {
   padding: 20px;
 }
 
+.dashboard-content-anims {
+  animation: dashboard-items-anim 0.2s normal forwards ease-in-out;
+}
+
 /* Dashboard customization ends */
+
+/* dashboard-card-anim */
+
+@keyframes dashboard-items-anim {
+  from {
+    transform: translateY(-10px);
+  }
+  to {transform: translateY(0)}
+}

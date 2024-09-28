@@ -9,7 +9,7 @@ const OrdersListing = memo(function OrdersListing() {
     orderState: { orders, processing, filters, setFilters },
   } = useContext(ContextDashboard);
   return (
-    <div className="mt-4">
+    <div className="mt-4 dashboard-content-anims">
       <div className="card">
         <Table headers={_tableHeaders} processing={processing} filters={filters} setFilters={setFilters}>
           {processing ? (

@@ -4,7 +4,7 @@ import { BasicInput, Dropdown } from "../../../shared";
 
 const TableFilters = memo(function TableFilters() {
   return (
-    <div className="flex flex-wrap md:flex-no-wrap gap-[14px] justify-between mt-4">
+    <div className="flex flex-wrap md:flex-no-wrap gap-[14px] justify-between mt-4 dashboard-content-anims">
       <div className="flex flex-wrap gap-[14px]">
         <Dropdown className="text-nowrap h-[40px] border px-4 py-2 text-secondary rounded-sm text-[15px] gap-[6px] bg-white w-full sm:w-auto" label={`Status: All`} options={_filterStatusOptions} />
         <div>
