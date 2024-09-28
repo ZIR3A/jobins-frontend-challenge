@@ -12,15 +12,15 @@ const PersonalSalesInfo = memo(function PersonalSalesInfo() {
   const _total_canceled = "10";
   const _shipping_address = "Dhahara Margg, Fulbari 11, Pokhara, Nepal";
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 space-y-4">
-      <div className="flex flex-wrap items-center gap-4 border-r-0 md:border-r">
+    <div className="grid grid-cols-1 lg:grid-cols-3 space-y-4">
+      <div className="flex flex-wrap items-center gap-4 border-r-0 lg:border-r">
         <img src={CircleBlueIcon} />
         <div>
           <p className="text-lg font-semibold">{_contact_name}</p>
-          <p className="text-[15px] text-secondary">{_contact_email}</p>
+          <p className="text-[15px] text-secondary truncate w-[80px] sm:w-auto">{_contact_email}</p>
         </div>
       </div>
-      <div className="px-0 md:px-5 border-r-0 md:border-r">
+      <div className="px-0 lg:px-5 border-r-0 lg:border-r">
         <p className="text-[13px] text-secondary uppercase font-medium mb-4">{PERSONAL_INFORMATION_TITLE}</p>
         <tbody className="text-[13px] text-[rgba(35, 39, 46, 1)]">
           <PersonalInfo label="Contact Number" value={_contact_number} />
@@ -28,7 +28,7 @@ const PersonalSalesInfo = memo(function PersonalSalesInfo() {
           <PersonalInfo label="Member Since" value={_contact_member_since} />
         </tbody>
       </div>
-      <div className="px-0 md:px-5">
+      <div className="px-0 lg:px-5">
         <p className="text-[13px] text-secondary uppercase font-medium">{SHIPPING_ADDRESS_TITLE}</p>
         <p className="text-[13px] text-primary uppercase font-medium mt-4">{_shipping_address}</p>
         <div className="flex flex-wrap gap-4 mt-4">

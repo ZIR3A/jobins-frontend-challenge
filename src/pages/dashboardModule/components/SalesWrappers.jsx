@@ -5,7 +5,7 @@ import OrdersNav from "./OrdersNav";
 const SalesWrappers = memo(function SalesWrappers() {
   return (
     <div className="mt-4">
-      <div className="card px-4 md:px-10 py-5">
+      <div className="card px-4 lg:px-10 pt-5">
         <PersonalSalesInfo />
         <OrdersNav />
       </div>

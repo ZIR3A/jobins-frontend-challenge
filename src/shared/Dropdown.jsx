@@ -6,7 +6,11 @@ const Dropdown = memo(function Dropdown({ className = "", label = "", options = 
   return (
     <>
       <button id="dropdownDefaultButton" data-dropdown-toggle={useID} className={`${className} flex items-center border-0 focus:ring-blue-primary focus:border-blue-primary`} type="button">
+        {/* <p className="truncate w-[40px] sm:w-auto overflow-hidden"> */}
+        <p className="truncate w-full overflow-hidden">
         {label}
+
+        </p>
         <svg className="w-2.5 h-2.5 ms-[6px]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
           <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
         </svg>
