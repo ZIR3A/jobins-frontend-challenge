@@ -3,7 +3,7 @@ import { ChevDownIcon, ChevUpIcon } from "../../../utils";
 import { memo } from "react";
 const CountryWiseCardStat = memo(function CountryWiseCardStat({ icon, title, marginAmount, percentage, isProfit }) {
   return (
-    <div className="flex justify-between items-center gap-4 flex-wrap md:flex-nowrap">
+    <div className="flex justify-between items-center gap-4 flex-wrap sm:flex-nowrap">
       <div className="flex items-center gap-2 w-[225px]">
         <img src={icon} className="w-[34px] h-[34px]" />
         <div>

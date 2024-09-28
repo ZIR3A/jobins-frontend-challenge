@@ -24,7 +24,7 @@ const CountryStatCard = memo(function TotalSalesCard() {
     isProfit: false,
   };
   return (
-    <div className="card col-span-1 lg:col-span-4 dashboard-card-wrapper">
+    <div className="card col-span-1 md:col-span-4 dashboard-card-wrapper mt-4 md:mt-4 lg:mt-0">
       <ul className="space-y-[18px]">
         <li>
           <CountryWiseCardStat {..._countryInfosUSA} />
