@@ -6,7 +6,7 @@
   "version": "0.0.0",
   "type": "module",
   "engines": {
-  "node": ">=16.0.0 latest"
+  "node": ">=16.0.0 <=20.0.0"
 },
   "scripts": {
     "dev": "vite",
