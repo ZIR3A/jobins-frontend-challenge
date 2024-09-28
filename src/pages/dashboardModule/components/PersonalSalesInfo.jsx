@@ -31,7 +31,7 @@ const PersonalSalesInfo = memo(function PersonalSalesInfo() {
       <div className="px-0 md:px-5">
         <p className="text-[13px] text-secondary uppercase font-medium">{SHIPPING_ADDRESS_TITLE}</p>
         <p className="text-[13px] text-primary uppercase font-medium mt-4">{_shipping_address}</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 mt-4">
+        <div className="flex flex-wrap gap-4 mt-4">
           <ShipingInfo count={_total_order} title="Total Order" />
           <ShipingInfo count={_total_completed} title="Completed" />
           <ShipingInfo count={_total_canceled} title="Canceled" />

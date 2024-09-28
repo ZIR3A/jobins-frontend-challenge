@@ -4,20 +4,20 @@ import PropTypes from "prop-types";
 const SidebarContext = createContext();
 
 export default function Sidebar({ children }) {
-  const [expanded, setExpanded] = useState(false);
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < SIDEBAR_MENU_RESPONSIVE_WIDTH) {
-        setExpanded(false);
-      }
-      if (window.innerWidth > SIDEBAR_MENU_RESPONSIVE_WIDTH) {
-        setExpanded(true);
-      }
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  const [expanded, setExpanded] = useState(true);
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     if (window.innerWidth < SIDEBAR_MENU_RESPONSIVE_WIDTH) {
+  //       setExpanded(false);
+  //     }
+  //     if (window.innerWidth > SIDEBAR_MENU_RESPONSIVE_WIDTH) {
+  //       setExpanded(true);
+  //     }
+  //   };
+  //   handleResize();
+  //   window.addEventListener("resize", handleResize);
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
   return (
     // <aside className={`sidebar-component ${expanded ? "expanded" : "collapsed"}`}>
     <aside className={`sidebar-component`}>
@@ -29,7 +29,8 @@ export default function Sidebar({ children }) {
               <span className={`overflow-hidden text-[22px] font-bold ${expanded ? "visible" : "hidden"}`}>{COMPANY_NAME}</span>
             </div>
           )}
-          <button onClick={() => (window.innerWidth < 520 ? null : setExpanded((curr) => !curr))} className="">
+          {/* <button onClick={() => (window.innerWidth < 520 ? null : setExpanded((curr) => !curr))} className=""> */}
+          <button onClick={() => setExpanded((curr) => !curr)} className="">
             {expanded ? <img src={ChevLeft} /> : <img src={ChevRight} />}
           </button>
         </div>
