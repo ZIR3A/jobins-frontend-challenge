@@ -3,13 +3,17 @@ import { _tableHeaders } from "../constants";
 import { Table } from "../../../shared";
 import { TableColumn } from "../../../shared/Table";
 import { ContextDashboard } from "../dashboardStore/DashboardStore";
+import TableFilters from "./TableFilters";
 
 const OrdersListing = memo(function OrdersListing() {
   const {
     orderState: { orders, processing, filters, setFilters },
   } = useContext(ContextDashboard);
   return (
-    <div className="mt-4 dashboard-content-anims">
+    <div className="mt-4 dashboard-items-anim">
+      <div className="mb-4">
+        <TableFilters />
+      </div>
       <div className="card">
         <Table headers={_tableHeaders} processing={processing} filters={filters} setFilters={setFilters}>
           {processing ? (

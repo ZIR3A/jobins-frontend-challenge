@@ -1,5 +1,5 @@
 import { ContentWrapper } from "../../../shared";
-import { CardsWrapper, OrdersListing, SalesWrappers, TableFilters } from "../components";
+import { CardsWrapper, OrdersListing, SalesWrappers } from "../components";
 import { ProviderDashboard } from "../dashboardStore/DashboardStore";
 
 const Dashboard = () => {
@@ -8,7 +8,6 @@ const Dashboard = () => {
       <ContentWrapper title="Dashboard">
         <CardsWrapper />
         <SalesWrappers />
-        <TableFilters />
         <OrdersListing />
       </ContentWrapper>
     </ProviderDashboard>
